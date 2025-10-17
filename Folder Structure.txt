@@ -1,0 +1,50 @@
+    EPAT_Project/
+│
+├── data/
+│   ├── raw/                      # Raw unprocessed data (from API / csv dumps)
+│   │   └── ind_nifty100list.csv
+│   ├── processed/                # Cleaned data for analysis
+│   │   └── 1min_stock_data/      
+│   └── features/                 # Generated features like EMA, RSI, MACD
+│       └── feature_set.pkl
+│
+├── notebooks/                    # Jupyter Notebooks for research & EDA
+│   ├── 01_data_preprocessing.ipynb
+│   ├── 02_feature_engineering.ipynb
+│   ├── 03_stat_arb_tests.ipynb
+│   ├── 04_ml_model_dev.ipynb
+│   └── 05_backtest_results.ipynb
+│
+├── src/                          # Core Python scripts (modular code)
+│   ├── __init__.py
+│   ├── data_loader.py            # Fetch data from Kite API / load CSV
+│   ├── feature_engineering.py    # Indicators, returns, signals
+│   ├── stat_arb.py               # Statistical arbitrage logic
+│   ├── ml_signals.py             # ML model training & prediction
+│   ├── execution.py              # Order execution logic (Kite API)
+│   ├── risk_management.py        # Position sizing, stop-loss, averaging logic
+│   └── utils.py                  # Helper functions, logging, configs
+│
+├── configs/
+│   ├── config.yaml               # General settings (API keys, capital, etc.)
+│   ├── feature_config.yaml       # Features to use
+│   └── model_config.yaml         # ML model hyperparameters
+│
+├── models/
+│   └── trained_model.pkl         # Saved ML model
+│
+├── backtests/
+│   ├── backtest_results.csv      # PnL, Sharpe, Drawdown stats
+│   └── trades_log.csv            # Trade-by-trade record
+│
+├── logs/
+│   └── execution_log.txt         # Real-time trading logs
+│
+├── tests/                        # Unit tests for reliability
+│   ├── test_data_loader.py
+│   ├── test_features.py
+│   └── test_execution.py
+│
+├── requirements.txt              # Python dependencies
+├── main.py                       # Entry point for live trading
+└── README.md                     # Documentation
